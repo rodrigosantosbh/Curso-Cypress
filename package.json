@@ -1,17 +1,25 @@
 {
-  "name": "curso-cypress",
+  "name": "Curso-Cypress",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "dependencies": {
+    "cypress": "^3.6.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "open": "cypress open"
-
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigosantosbh/Curso-Cypress.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^3.8.3"
-  }
+  "bugs": {
+    "url": "https://github.com/rodrigosantosbh/Curso-Cypress/issues"
+  },
+  "homepage": "https://github.com/rodrigosantosbh/Curso-Cypress#readme"
 }

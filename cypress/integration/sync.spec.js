@@ -51,4 +51,18 @@ describe('Esperas...', () => {
         //cy.get('#novoCampo', {timeout: 1000})
         //    .should('exist')
     })
+
+    it('Click Retry', () => {
+        cy.get('#buttonCount')
+        .click()
+        .should('have.value', '11')
+    })
+
+    it.only('Should vs Then', () => {
+        cy.get('#buttonListDOM')
+            .click()
+        cy.get('#lista li span').then($el => {
+            expect($el).to.have.length(1)
+        }).and('have.id', 'buttonListDOM')
+    })
 })

@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 describe('Cypress basics', () => {
-    it('Deve visitar a pagina e comparar o titulo..', () => {
+    it.only('Deve visitar a pagina e comparar o titulo..', () => {
         cy.visit('https://wcaquino.me/cypress/componentes.html')
 
         //const title = cy.title()
@@ -19,7 +19,13 @@ describe('Cypress basics', () => {
             .should('be.equal', 'Campo de Treinamento')
             .and('contain', 'Campo')
 
-        //TODO impirmir o log no console
+            cy.title().then(title => {
+                console.log(title)
+
+                cy.get('#formNome').type(title)
+            })
+
+        
         //TODO escrever o log em um campo de teste
 
     })
