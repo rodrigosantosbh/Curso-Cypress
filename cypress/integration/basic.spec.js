@@ -19,13 +19,25 @@ describe('Cypress basics', () => {
             .should('be.equal', 'Campo de Treinamento')
             .and('contain', 'Campo')
 
-            cy.title().then(title => {
-                console.log(title)
+        let syncTitle
 
-                cy.get('#formNome').type(title)
-            })
+        cy.title().then(title => {
+            console.log(title)
 
-        
+            cy.get('#formNome').type(title)
+
+            syncTitle = title
+        })
+
+        cy.get('[data-cy=dataSobrenome]').then($el => {
+            $el.val(syncTitle)
+        })
+
+        cy.get('#elementosForm\\:sugestoes').then($el => {
+            cy.wrap($el).type(syncTitle)
+        })
+
+
         //TODO escrever o log em um campo de teste
 
     })
@@ -35,6 +47,6 @@ describe('Cypress basics', () => {
         cy.get('#buttonSimple')
             .click()
             .should('have.value', 'Obrigado!')
-    
+
     })
 })
