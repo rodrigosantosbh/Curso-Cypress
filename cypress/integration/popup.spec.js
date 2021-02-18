@@ -20,4 +20,11 @@ describe('Trabalhando com Popup..', () => {
         cy.get('#buttonPopUp').click()
         cy.get('@winOpen').should('be.called')
     })
+
+describe('Trabalhando com Links', () => {
+    
+    it.only('', () => {
+
+    })
+})
 })
