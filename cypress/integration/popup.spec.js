@@ -23,8 +23,10 @@ describe('Trabalhando com Popup..', () => {
 
 describe('Trabalhando com Links', () => {
     
-    it.only('', () => {
-
+    it.only('Check popup url', () => {
+        cy.contains('Popup2')
+        .should('have.prop', 'href')
+        .and('equal', 'https://wcaquino.me/cypress/frame.html')
+        })
     })
-})
 })
